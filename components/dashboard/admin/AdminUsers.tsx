@@ -83,7 +83,7 @@ export const AdminUsers: React.FC = () => {
     };
 
     return (
-        <div className="p-4 md:p-8 space-y-6 bg-[#F8FAFC] min-h-screen">
+        <div className="p-3 sm:p-4 md:p-6 xl:p-8 space-y-6 bg-[#F8FAFC] min-h-screen">
             <Card className="border-none shadow-none bg-transparent">
                 <CardHeader className="px-0 pt-0 pb-8">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -95,14 +95,14 @@ export const AdminUsers: React.FC = () => {
                                 </div>
                                 <CardTitle className="text-2xl font-bold text-ueu-navy">Manajemen Civitas</CardTitle>
                             </div>
-                            <CardDescription className="text-slate-500 font-medium ml-12">
+                            <CardDescription className="text-slate-500 font-medium ml-0 sm:ml-12">
                                 Kelola akses dan profil untuk <span className="text-ueu-blue font-bold">{totalUsers}</span> pengguna sistem.
                             </CardDescription>
                         </div>
 
                         {/* Kontrol Navigasi & Aksi */}
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
-                            <div className="relative flex-grow lg:min-w-[320px]">
+                        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 w-full lg:w-auto">
+                            <div className="relative w-full md:flex-1 lg:min-w-[360px]">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                                 <Input
                                     placeholder="Cari nama atau email mahasiswa..."
@@ -112,7 +112,7 @@ export const AdminUsers: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-start">
                                 <UserFilterControls
                                     roleFilter={roleFilter}
                                     setRoleFilter={setRoleFilter}
@@ -127,7 +127,7 @@ export const AdminUsers: React.FC = () => {
 
                                 <Button 
                                     onClick={() => setIsCreateOpen(true)} 
-                                    className="bg-ueu-navy hover:bg-ueu-blue text-white rounded-xl h-11 px-6 shadow-md transition-all duration-300 flex-shrink-0"
+                                    className="bg-ueu-navy hover:bg-ueu-blue text-white rounded-xl h-11 px-4 sm:px-6 shadow-md transition-all duration-300 md:flex-shrink-0 w-auto"
                                 >
                                     <Plus className="h-4 w-4 mr-2" /> <span className="hidden sm:inline">Tambah Pengguna</span>
                                 </Button>

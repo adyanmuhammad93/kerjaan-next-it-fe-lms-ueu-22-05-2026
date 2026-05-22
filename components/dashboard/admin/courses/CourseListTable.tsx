@@ -81,7 +81,8 @@ export const CourseListTable: React.FC<CourseListTableProps> = ({
 
     return (
         <div className="rounded-3xl border border-slate-100 bg-white overflow-hidden shadow-sm">
-            <Table>
+            <div className="w-full overflow-x-auto">
+                <Table className="min-w-[980px]">
                 <TableHeader>
                     <TableRow>
                         <TableHead>Mata Kuliah</TableHead>
@@ -189,13 +190,14 @@ export const CourseListTable: React.FC<CourseListTableProps> = ({
                     )}
                 </TableBody>
             </Table>
+            </div>
             
             {/* Pagination Controls */}
-            <div className="flex items-center justify-between px-6 py-4 bg-[#F8FAFC]/50 border-t border-slate-100">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-[#F8FAFC]/50 border-t border-slate-100">
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-[2px]">
                     Menampilkan <span className="text-ueu-blue">{Math.min((page - 1) * limit + 1, totalCourses)} - {Math.min(page * limit, totalCourses)}</span> Dari <span className="text-ueu-navy">{totalCourses}</span> Mata Kuliah
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 self-end sm:self-auto">
                     <Button 
                         variant="ghost" 
                         size="sm" 

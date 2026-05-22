@@ -570,7 +570,7 @@ export const Dashboard: React.FC = () => {
                     </header>
 
                     {/* Desktop Header */}
-                    <header className="hidden lg:flex items-center justify-between border-b border-slate-100 bg-white/80 px-12 py-5 backdrop-blur-md sticky top-0 z-20">
+                    <header className="hidden lg:flex items-center justify-between border-b border-slate-100 bg-white/80 px-6 xl:px-12 py-4 xl:py-5 backdrop-blur-md sticky top-0 z-20">
                         <div className="flex items-center gap-4 flex-1">
                             <Button
                                 variant="outline"
@@ -721,7 +721,7 @@ export const Dashboard: React.FC = () => {
                     )}
 
                     {/* Content Area */}
-                    <main className="flex-1 px-8 md:px-16 py-12 overflow-x-hidden bg-slate-50/30">
+                    <main className="flex-1 px-3 sm:px-4 md:px-6 xl:px-10 py-4 sm:py-6 lg:py-8 overflow-x-hidden bg-slate-50/30">
                         <div className="max-w-7xl mx-auto h-full">
                             <Suspense fallback={<LoadingScreen />}>
                                 {renderContent()}

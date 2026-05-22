@@ -164,7 +164,7 @@ export const StudentProgressReport: React.FC = () => {
     );
 
     return (
-        <div className="space-y-8 py-8 bg-[#F8FAFC] min-h-screen">
+        <div className="space-y-6 sm:space-y-8 py-4 sm:py-6 lg:py-8 bg-[#F8FAFC] min-h-screen px-3 sm:px-4 lg:px-4">
             {/* Header */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="space-y-1">

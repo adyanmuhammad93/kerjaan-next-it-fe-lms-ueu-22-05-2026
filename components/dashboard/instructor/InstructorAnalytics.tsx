@@ -218,7 +218,7 @@ export const InstructorAnalytics: React.FC = () => {
     if (loading) return <div className="flex h-64 items-center justify-center"><Loader2 className="animate-spin text-primary h-8 w-8" /></div>;
 
     return (
-        <div className="space-y-8 animate-in fade-in duration-500 min-h-screen bg-transparent">
+        <div className="space-y-6 sm:space-y-8 py-4 sm:py-6 lg:py-8 px-3 sm:px-4 lg:px-4 animate-in fade-in duration-500 min-h-screen bg-transparent">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                 <div className="space-y-1">
                     <div className="flex items-center gap-3">
@@ -227,13 +227,13 @@ export const InstructorAnalytics: React.FC = () => {
                         </div>
                         <h2 className="text-2xl font-bold text-[#003366]">Analitik Performa</h2>
                     </div>
-                    <p className="text-slate-500 font-medium ml-12">Pantau pendapatan, pendaftaran, dan pencapaian kompetensi secara mendalam.</p>
+                    <p className="text-slate-500 font-medium ml-0 sm:ml-12">Pantau pendapatan, pendaftaran, dan pencapaian kompetensi secara mendalam.</p>
                 </div>
-                <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <Button variant="outline" className="flex-1 sm:flex-none h-11 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full xl:w-auto">
+                    <Button variant="outline" className="w-full sm:w-auto h-11 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all">
                         <CalendarIcon className="mr-2 h-4 w-4" /> 14 Hari Terakhir
                     </Button>
-                    <Button variant="outline" className="flex-1 sm:flex-none h-11 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all" onClick={handleExport}>
+                    <Button variant="outline" className="w-full sm:w-auto h-11 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all" onClick={handleExport}>
                         <Download className="mr-2 h-4 w-4" /> Ekspor Laporan
                     </Button>
                 </div>
@@ -241,7 +241,7 @@ export const InstructorAnalytics: React.FC = () => {
 
             {/* Revenue Chart */}
             <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-white">
-                <CardHeader className="p-8 pb-0">
+                <CardHeader className="p-4 sm:p-6 lg:p-8 pb-0">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
                             <CardTitle className="text-xl font-black text-[#003366]">Tren Pendapatan ({currency.code})</CardTitle>
@@ -253,7 +253,7 @@ export const InstructorAnalytics: React.FC = () => {
                         </div>
                     </div>
                 </CardHeader>
-                <CardContent className="h-[400px] p-8 pt-6">
+                <CardContent className="h-[320px] sm:h-[360px] lg:h-[400px] p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
                     <ResponsiveContainer width="100%" height="100%">
                         <AreaChart data={analyticsData.chartData}>
                             <defs>
@@ -303,11 +303,11 @@ export const InstructorAnalytics: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Course Distribution Pie */}
                 <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-white">
-                    <CardHeader className="p-8 pb-0">
+                    <CardHeader className="p-4 sm:p-6 lg:p-8 pb-0">
                         <CardTitle className="text-lg font-black text-[#003366]">Distribusi Pendaftaran</CardTitle>
                         <CardDescription className="text-slate-500 font-medium">5 mata kuliah paling diminati.</CardDescription>
                     </CardHeader>
-                    <CardContent className="h-[350px] p-8">
+                    <CardContent className="h-[300px] sm:h-[330px] lg:h-[350px] p-4 sm:p-6 lg:p-8">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
@@ -341,11 +341,11 @@ export const InstructorAnalytics: React.FC = () => {
 
                 {/* Category Bar Chart */}
                 <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-white">
-                    <CardHeader className="p-8 pb-0">
+                    <CardHeader className="p-4 sm:p-6 lg:p-8 pb-0">
                         <CardTitle className="text-lg font-black text-[#003366]">Volume per Kategori</CardTitle>
                         <CardDescription className="text-slate-500 font-medium">Topik materi dengan konversi tertinggi.</CardDescription>
                     </CardHeader>
-                    <CardContent className="h-[350px] p-8">
+                    <CardContent className="h-[300px] sm:h-[330px] lg:h-[350px] p-4 sm:p-6 lg:p-8">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={analyticsData.categoryData} layout="vertical" margin={{ left: 20 }}>
                                 <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#f1f5f9" />
@@ -365,7 +365,7 @@ export const InstructorAnalytics: React.FC = () => {
 
             {/* Detailed Metrics Table Summary */}
             <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-white">
-                <CardHeader className="p-8 pb-4">
+                <CardHeader className="p-4 sm:p-6 lg:p-8 pb-4">
                     <div className="flex items-center justify-between">
                         <div>
                             <CardTitle className="text-lg font-black text-[#003366]">Performa Mata Kuliah</CardTitle>
@@ -381,7 +381,7 @@ export const InstructorAnalytics: React.FC = () => {
                         </Button>
                     </div>
                 </CardHeader>
-                <CardContent className="px-8 pb-8">
+                <CardContent className="px-4 sm:px-6 lg:px-8 pb-6 lg:pb-8">
                     <div className="grid gap-4">
                         {stats.slice(0, 5).map((stat, i) => (
                             <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-[#F8FAFC] rounded-2xl hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-slate-100 group">
@@ -415,7 +415,7 @@ export const InstructorAnalytics: React.FC = () => {
 
             <Dialog open={isReportOpen} onOpenChange={setIsReportOpen}>
                 <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden flex flex-col p-0 rounded-[32px] border-none shadow-2xl">
-                    <DialogHeader className="p-8 pb-4">
+                    <DialogHeader className="p-4 sm:p-6 lg:p-8 pb-4">
                         <div className="flex items-center justify-between">
                             <div>
                                 <DialogTitle className="text-2xl font-black text-[#003366]">Laporan Performa Komprehensif</DialogTitle>

@@ -174,7 +174,7 @@ export const StudentProgressReport: React.FC = () => {
                         </div>
                         <h1 className="text-2xl font-bold text-ueu-navy">Progres Belajar Mahasiswa</h1>
                     </div>
-                    <p className="text-slate-500 font-medium ml-12">Pantau perjalanan belajar dan pencapaian kompetensi seluruh mahasiswa Anda.</p>
+                    <p className="text-slate-500 font-medium ml-0 sm:ml-12">Pantau perjalanan belajar dan pencapaian kompetensi seluruh mahasiswa Anda.</p>
                 </div>
                 <Button 
                     variant="outline" 
@@ -211,9 +211,9 @@ export const StudentProgressReport: React.FC = () => {
             {/* Content Area */}
             <div className="bg-white rounded-[32px] border border-slate-100 shadow-sm overflow-hidden">
                 {/* Filters */}
-                <div className="p-6 border-b border-slate-50 flex flex-col md:flex-row gap-4 justify-between items-center bg-[#F8FAFC]/50">
-                    <div className="flex flex-col md:flex-row gap-4 w-full flex-1">
-                        <div className="relative flex-1 max-w-md">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center bg-[#F8FAFC]/50">
+                    <div className="flex flex-col lg:flex-row gap-4 w-full flex-1">
+                        <div className="relative w-full lg:flex-1 lg:max-w-md">
                             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                             <Input
                                 placeholder="Cari nama atau email mahasiswa..."
@@ -223,10 +223,10 @@ export const StudentProgressReport: React.FC = () => {
                             />
                         </div>
                         
-                        <div className="relative">
+                        <div className="relative w-full lg:w-auto">
                             <button
                                 onClick={() => setCourseDropdownOpen(o => !o)}
-                                className="flex items-center gap-3 px-4 h-11 rounded-xl border border-slate-200 bg-white text-sm font-bold text-ueu-navy hover:bg-slate-50 transition-all min-w-[240px] justify-between shadow-sm"
+                                className="flex items-center gap-3 px-4 h-11 rounded-xl border border-slate-200 bg-white text-sm font-bold text-ueu-navy hover:bg-slate-50 transition-all w-full lg:min-w-[240px] justify-between shadow-sm"
                             >
                                 <span className="flex items-center gap-2 truncate">
                                     <BookOpen className="h-4 w-4 text-ueu-blue shrink-0" />
@@ -265,8 +265,9 @@ export const StudentProgressReport: React.FC = () => {
                 </div>
 
                 {/* Data Table */}
-                <div className="p-6">
-                    <Table>
+                <div className="p-4 sm:p-6">
+                    <div className="w-full overflow-x-auto">
+                        <Table className="min-w-[920px]">
                         <TableHeader>
                             <TableRow>
                                 <TableHead className="cursor-pointer hover:text-ueu-blue transition-colors" onClick={() => handleSort('student_name')}>
@@ -363,6 +364,7 @@ export const StudentProgressReport: React.FC = () => {
                             )}
                         </TableBody>
                     </Table>
+                    </div>
                 </div>
                 {filtered.length > 0 && (
                     <div className="px-6 py-4 bg-[#F8FAFC]/50 text-[10px] font-black text-slate-400 uppercase tracking-[2px] flex justify-between items-center">

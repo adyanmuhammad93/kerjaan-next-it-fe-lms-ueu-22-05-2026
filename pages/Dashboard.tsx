@@ -520,10 +520,10 @@ export const Dashboard: React.FC = () => {
                 {/* Main Content */}
                 <div className={cn(
                     "flex-1 flex flex-col transition-all duration-300 ease-in-out",
-                    isSidebarCollapsed ? "lg:ml-24" : "lg:ml-72"
+                    isSidebarCollapsed ? "xl:ml-24" : "xl:ml-72"
                 )}>
                     {/* Mobile Header */}
-                    <header className="sticky top-0 z-20 h-20 bg-white/90 backdrop-blur-md border-b border-slate-100 flex items-center justify-between px-6 lg:hidden">
+                    <header className="sticky top-0 z-20 h-20 bg-white/90 backdrop-blur-md border-b border-slate-100 flex items-center justify-between px-6 xl:hidden">
                         <div className="flex items-center gap-4">
                             <Button variant="ghost" size="icon" className="text-ueu-navy hover:text-ueu-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Buka menu dashboard">
                                 <Menu className="h-6 w-6" aria-hidden="true" />
@@ -570,7 +570,7 @@ export const Dashboard: React.FC = () => {
                     </header>
 
                     {/* Desktop Header */}
-                    <header className="hidden lg:flex items-center justify-between border-b border-slate-100 bg-white/80 px-6 xl:px-12 py-4 xl:py-5 backdrop-blur-md sticky top-0 z-20">
+                    <header className="hidden xl:flex items-center justify-between border-b border-slate-100 bg-white/80 px-6 xl:px-12 py-4 xl:py-5 backdrop-blur-md sticky top-0 z-20">
                         <div className="flex items-center gap-4 flex-1">
                             <Button
                                 variant="outline"
@@ -656,7 +656,7 @@ export const Dashboard: React.FC = () => {
 
                     {/* Mobile Sidebar Overlay */}
                     {mobileMenuOpen && (
-                        <div className="fixed inset-0 z-50 bg-[#FEFBFF]/95 backdrop-blur-xl lg:hidden flex flex-col animate-in fade-in zoom-in-95 duration-300">
+                        <div className="fixed inset-0 z-50 bg-[#FEFBFF]/95 backdrop-blur-xl xl:hidden flex flex-col animate-in fade-in zoom-in-95 duration-300">
                             <div className="flex items-center justify-between p-8 border-b border-slate-100 bg-white">
                                 <img
                                     src="/ueu-asu-logo.svg"

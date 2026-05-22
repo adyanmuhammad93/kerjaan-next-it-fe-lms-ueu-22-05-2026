@@ -139,7 +139,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
 
     return (
         <aside className={cn(
-            "hidden bg-white border-r border-slate-100 lg:flex flex-col fixed inset-y-0 z-30 transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)]",
+            "hidden bg-white border-r border-slate-100 xl:flex flex-col fixed inset-y-0 z-30 transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)]",
             isCollapsed ? "w-24" : "w-72"
         )}>
             {/* Logo Area */}
@@ -201,7 +201,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 {/* Modern Toggle Button */}
                 <button
                     onClick={toggleCollapse}
-                    className="absolute -right-3.5 top-[-14px] bg-white border border-slate-100 shadow-md rounded-full p-2 text-slate-300 hover:text-ueu-blue hover:border-ueu-blue transition-all lg:flex z-40 active:scale-90"
+                    className="absolute -right-3.5 top-[-14px] bg-white border border-slate-100 shadow-md rounded-full p-2 text-slate-300 hover:text-ueu-blue hover:border-ueu-blue transition-all xl:flex z-40 active:scale-90"
                 >
                     {isCollapsed ? <ChevronRight className="h-3.5 w-3.5" /> : <ChevronLeft className="h-3.5 w-3.5" />}
                 </button>

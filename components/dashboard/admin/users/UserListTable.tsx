@@ -78,12 +78,13 @@ export const UserListTable: React.FC<UserListTableProps> = ({
 
     return (
         <div className="rounded-3xl border border-slate-100 bg-white overflow-hidden shadow-sm">
-            <Table>
+            <div className="w-full overflow-x-auto">
+            <Table className="min-w-[680px] lg:min-w-[760px]">
                 <TableHeader>
                     <TableRow>
                         <TableHead>Pengguna</TableHead>
                         <TableHead>Peran</TableHead>
-                        <TableHead className="hidden md:table-cell">Tanggal Bergabung</TableHead>
+                        <TableHead className="hidden xl:table-cell">Tanggal Bergabung</TableHead>
                         <TableHead className="text-right">Aksi</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -126,7 +127,7 @@ export const UserListTable: React.FC<UserListTableProps> = ({
                                 <TableCell>
                                     {getRoleBadge(user.role)}
                                 </TableCell>
-                                <TableCell className="hidden md:table-cell">
+                                <TableCell className="hidden xl:table-cell">
                                     <div className="text-xs font-bold text-slate-600">{new Date(user.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
                                     <div className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">Akademik Terdaftar</div>
                                 </TableCell>
@@ -166,13 +167,14 @@ export const UserListTable: React.FC<UserListTableProps> = ({
                     )}
                 </TableBody>
             </Table>
+            </div>
 
             {/* Pagination Controls */}
-            <div className="flex items-center justify-between px-6 py-4 bg-[#F8FAFC]/50 border-t border-slate-100">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-[#F8FAFC]/50 border-t border-slate-100">
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-[2px]">
                     Menampilkan <span className="text-ueu-blue">{Math.min((page - 1) * limit + 1, totalUsers)} - {Math.min(page * limit, totalUsers)}</span> Dari <span className="text-ueu-navy">{totalUsers}</span> Civitas
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 self-end sm:self-auto">
                     <Button
                         variant="ghost"
                         size="sm"

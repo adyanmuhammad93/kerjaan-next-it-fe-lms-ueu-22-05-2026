@@ -210,8 +210,8 @@ export const AssetsRepository: React.FC = () => {
     };
 
     return (
-        <div className="space-y-8 py-8 animate-in fade-in duration-500 bg-[#F8FAFC] min-h-screen lg:px-4">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="space-y-6 sm:space-y-8 py-4 sm:py-6 lg:py-8 animate-in fade-in duration-500 bg-[#F8FAFC] min-h-screen px-3 sm:px-4 lg:px-4">
+            <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 sm:gap-6">
                 <div className="space-y-1">
                     <div className="flex items-center gap-3">
                         <div className="p-2.5 bg-[#0078C1] bg-opacity-10 rounded-2xl">
@@ -219,19 +219,19 @@ export const AssetsRepository: React.FC = () => {
                         </div>
                         <h2 className="text-2xl font-bold text-[#003366]">Repositori Aset</h2>
                     </div>
-                    <p className="text-slate-500 font-medium ml-12">Kelola berkas dan media pembelajaran Anda secara terpusat untuk kemudahan penyisipan materi.</p>
+                    <p className="text-slate-500 font-medium ml-0 sm:ml-12">Kelola berkas dan media pembelajaran Anda secara terpusat untuk kemudahan penyisipan materi.</p>
                 </div>
 
-                <div className="flex items-center gap-3 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full xl:w-auto">
                     <Button 
                         variant="outline" 
                         onClick={handleCreateFolder}
-                        className="flex-1 sm:flex-none h-12 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all"
+                        className="w-full sm:w-auto h-12 rounded-xl border-slate-200 text-slate-600 font-bold bg-white shadow-sm hover:text-[#0078C1] transition-all"
                     >
                         <Plus className="mr-2 h-5 w-5 text-[#0078C1]" /> Folder Baru
                     </Button>
                     <Button
-                        className="flex-1 sm:flex-none bg-[#003366] hover:bg-[#0078C1] text-white rounded-xl h-12 px-6 shadow-md shadow-[#003366]/10 transition-all duration-300 flex items-center justify-center gap-2 font-bold"
+                        className="w-full sm:w-auto bg-[#003366] hover:bg-[#0078C1] text-white rounded-xl h-12 px-6 shadow-md shadow-[#003366]/10 transition-all duration-300 flex items-center justify-center gap-2 font-bold"
                         onClick={() => fileInputRef.current?.click()}
                         disabled={uploading}
                     >
@@ -250,7 +250,7 @@ export const AssetsRepository: React.FC = () => {
 
             <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-white flex flex-col flex-1 min-h-[600px]">
                 {/* Toolbar & Breadcrumbs */}
-                <div className="px-8 py-5 border-b border-slate-100 flex items-center justify-between bg-[#F8FAFC]/50">
+                <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 border-b border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 bg-[#F8FAFC]/50">
                     <div className="flex items-center gap-1 overflow-x-auto whitespace-nowrap hide-scrollbar">
                         {path.map((item, index) => (
                             <React.Fragment key={item.id ?? 'root'}>
@@ -270,7 +270,7 @@ export const AssetsRepository: React.FC = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-2xl shrink-0 ml-6">
+                    <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-2xl shrink-0 sm:ml-6">
                         <button
                             onClick={() => setViewMode('grid')}
                             className={cn(
@@ -292,7 +292,7 @@ export const AssetsRepository: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="p-6 border-b border-slate-50 flex flex-col sm:flex-row items-center gap-4">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                     <div className="relative flex-1 w-full sm:max-w-md">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                         <Input

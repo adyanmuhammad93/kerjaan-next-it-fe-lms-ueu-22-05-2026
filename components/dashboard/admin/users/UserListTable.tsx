@@ -79,12 +79,12 @@ export const UserListTable: React.FC<UserListTableProps> = ({
     return (
         <div className="rounded-3xl border border-slate-100 bg-white overflow-hidden shadow-sm">
             <div className="w-full overflow-x-auto">
-            <Table className="min-w-[680px] lg:min-w-[760px]">
+            <Table className="min-w-[860px]">
                 <TableHeader>
                     <TableRow>
                         <TableHead>Pengguna</TableHead>
                         <TableHead>Peran</TableHead>
-                        <TableHead className="hidden xl:table-cell">Tanggal Bergabung</TableHead>
+                        <TableHead className="hidden md:table-cell">Tanggal Bergabung</TableHead>
                         <TableHead className="text-right">Aksi</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -127,7 +127,7 @@ export const UserListTable: React.FC<UserListTableProps> = ({
                                 <TableCell>
                                     {getRoleBadge(user.role)}
                                 </TableCell>
-                                <TableCell className="hidden xl:table-cell">
+                                <TableCell className="hidden md:table-cell">
                                     <div className="text-xs font-bold text-slate-600">{new Date(user.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
                                     <div className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">Akademik Terdaftar</div>
                                 </TableCell>

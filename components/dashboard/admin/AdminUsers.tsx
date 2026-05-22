@@ -101,8 +101,8 @@ export const AdminUsers: React.FC = () => {
                         </div>
 
                         {/* Kontrol Navigasi & Aksi */}
-                        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 w-full">
-                            <div className="relative w-full lg:flex-1 lg:min-w-0">
+                        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 w-full lg:w-auto">
+                            <div className="relative w-full md:flex-1 lg:min-w-[360px]">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                                 <Input
                                     placeholder="Cari nama atau email mahasiswa..."
@@ -112,7 +112,7 @@ export const AdminUsers: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="flex items-center gap-2 w-full lg:w-auto justify-between lg:justify-start">
+                            <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-start">
                                 <UserFilterControls
                                     roleFilter={roleFilter}
                                     setRoleFilter={setRoleFilter}
@@ -127,7 +127,7 @@ export const AdminUsers: React.FC = () => {
 
                                 <Button 
                                     onClick={() => setIsCreateOpen(true)} 
-                                    className="bg-ueu-navy hover:bg-ueu-blue text-white rounded-xl h-11 px-4 sm:px-6 shadow-md transition-all duration-300 lg:flex-shrink-0 w-auto"
+                                    className="bg-ueu-navy hover:bg-ueu-blue text-white rounded-xl h-11 px-4 sm:px-6 shadow-md transition-all duration-300 md:flex-shrink-0 w-auto"
                                 >
                                     <Plus className="h-4 w-4 mr-2" /> <span className="hidden sm:inline">Tambah Pengguna</span>
                                 </Button>
